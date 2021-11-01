@@ -1,0 +1,67 @@
+@import "_normalize";
+
+html, body {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  font-family: 'Anonymous Pro', monospace;
+  line-height: 25px;
+  letter-spacing: -0.05em;
+}
+
+body {
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #D60000 0%, #E34400 25%, #EE6800 50%, #F78800 75%, #FFA600 100%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D60000 0%, #E34400 25%, #EE6800 50%, #F78800 75%, #FFA600 100%);
+  }
+}
+
+#root {
+  height: 100%;
+
+  .bg-portfolio{
+    display: block;
+    margin: auto;
+    top: 0;
+    z-index: -1;
+    width: 1920px;
+    height: 100%;
+    position: absolute;
+
+    @media (min-width: 1921px) {
+      transform: scale(1.2);
+    }
+
+    @media (min-width: 2110px) {
+      transform: scale(1.3);
+    }
+
+    @media (min-width: 2295px) {
+      transform: scale(1.5);
+    }
+
+    @media (min-width: 2400px) {
+      transform: scale(1.7);
+    }
+
+    @media (min-width: 2560px) {
+      width: 100%;
+    }
+  }
+
+  .wrapper{
+    display: grid;
+    height: 100%;
+  }
+}
