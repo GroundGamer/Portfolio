@@ -13,7 +13,7 @@ const MyWorks: FC = () => {
 	
 	useEffect(() => {
 		dispatch(fetchWorks())
-	}, [])
+	}, [dispatch])
 	
 	console.log(works)
 	
