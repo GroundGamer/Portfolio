@@ -78,44 +78,95 @@
 
     &-area {
       &-text {
-        &-bio {
-          font-weight: bold;
-          font-size: 36px;
-          margin-bottom: 15px;
+        &-block_bio {
+          display: flex;
+          align-items: center;
 
-          @media (max-width: 1440px) {
-            font-size: 32px;
-            margin-bottom: 10px;
-          }
-
-          @media (max-width: 1024px) {
-            font-size: 30px;
-            margin-bottom: 9px;
-          }
-
-          @media (max-width: 925px) {
-            font-size: 28px;
-            margin-bottom: 8px;
-          }
-
-          &-aBitMore {
-            font-size: 18px;
+          &-bio {
+            font-weight: bold;
+            font-size: 36px;
             margin-bottom: 15px;
 
             @media (max-width: 1440px) {
-              font-size: 16px;
-              margin-bottom: 14px;
+              font-size: 32px;
+              margin-bottom: 10px;
             }
 
             @media (max-width: 1024px) {
-              font-size: 14px;
-              margin-bottom: 13px;
+              font-size: 30px;
+              margin-bottom: 9px;
             }
 
             @media (max-width: 925px) {
-              font-size: 12px;
-              margin-bottom: 12px;
+              font-size: 28px;
+              margin-bottom: 8px;
             }
+          }
+
+          &-swipe {
+            width: 100%;
+            opacity: 0.5;
+            transition: opacity 1s ease-in-out;
+
+            &:hover{
+              opacity: 1;
+            }
+
+            &-text {
+              font-size: 10px;
+
+              @media (max-width: 375px) {
+                font-size: 8px;
+              }
+            }
+
+            &-arrow {
+              margin-left: 5px;
+              animation-name: arrow;
+              animation-duration: 1.5s;
+              animation-iteration-count: infinite;
+              animation-direction: alternate;
+              animation-timing-function: linear;
+            }
+
+            @media (min-width: 701px) {
+              display: none;
+            }
+
+            @media (max-width: 700px) {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            @keyframes arrow {
+              0%{
+                opacity: 0.1;
+              }
+              100%{
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        &-aBitMore {
+          font-size: 18px;
+          margin-bottom: 15px;
+
+          @media (max-width: 1440px) {
+            font-size: 16px;
+            margin-bottom: 14px;
+          }
+
+          @media (max-width: 1024px) {
+            font-size: 14px;
+            margin-bottom: 13px;
+          }
+
+          @media (max-width: 925px) {
+            font-size: 12px;
+            margin-bottom: 12px;
           }
         }
 
@@ -145,6 +196,7 @@
 
         &-block {
           break-inside: avoid;
+
           &-item {
             display: flex;
             flex-direction: row;

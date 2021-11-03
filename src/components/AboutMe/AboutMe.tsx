@@ -10,10 +10,18 @@ const AboutMe: FC = () => {
 				<img src="./img/logo-2.svg" alt="" className="aboutMe__logo-2"/>
 				<div className="aboutMe__content">
 					<div className="aboutMe__content-area">
-						<p className="aboutMe__content-area-text-bio">
-							Биография
-						</p>
-						<p className="aboutMe__content-area-text-bio-aBitMore">
+						<div className="aboutMe__content-area-text-block_bio">
+							<p className="aboutMe__content-area-text-block_bio-bio">
+								Биография
+							</p>
+							<div className="aboutMe__content-area-text-block_bio-swipe">
+								<p className="aboutMe__content-area-text-block_bio-swipe-text">
+									Вы можете свайпнуть вправо
+								</p>
+								<p className="aboutMe__content-area-text-block_bio-swipe-arrow">&rarr;</p>
+							</div>
+						</div>
+						<p className="aboutMe__content-area-text-aBitMore">
 							Ещё немного обо мне
 						</p>
 						<div className="aboutMe__content-area-text-grid">
