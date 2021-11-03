@@ -14,21 +14,27 @@ const MyWorks: FC = () => {
 	useEffect(() => {
 		dispatch(fetchWorks())
 	}, [dispatch])
-	
-	console.log(works)
-	
+
 	return (
 		<div className="myWorks">
 			<div className="myWorks__content">
 				<div className="myWorks__content-area">
-					<p className="myWorks__content-area-heading">
-						Мои работы
-						{error &&
-                        <p style={{color: '#d60000', marginLeft: '5px'}}>
-							{error}
-                        </p>
-						}
-					</p>
+					<div className="myWorks__content-area-heading">
+						<p className="myWorks__content-area-heading-text">
+							Мои работы
+							{error &&
+                            <p style={{color: '#d60000', marginLeft: '5px'}}>
+								{error}
+                            </p>
+							}
+						</p>
+						<div className="myWorks__content-area-heading-swipe">
+							<p className="myWorks__content-area-heading-swipe-text">
+								Вы можете свайпнуть вправо
+							</p>
+							<p className="myWorks__content-area-heading-swipe-arrow">&rarr;</p>
+						</div>
+					</div>
 					<div className="myWorks__content-area-block">
 						{isLoading ?
 							Array.from(Array(10).keys()).map(() =>

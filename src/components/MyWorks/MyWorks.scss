@@ -52,23 +52,73 @@
 
     &-area {
       &-heading {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 40px;
+        display: flex;
 
-        @media (max-width: 1440px) {
-          font-size: 32px;
-          margin-bottom: 30px;
+        &-text{
+          font-size: 36px;
+          font-weight: bold;
+          margin-bottom: 40px;
+
+          @media (max-width: 1440px) {
+            font-size: 32px;
+            margin-bottom: 30px;
+          }
+
+          @media (max-width: 1024px) {
+            font-size: 28px;
+            margin-bottom: 20px;
+          }
+
+          @media (max-width: 925px) {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
         }
 
-        @media (max-width: 1024px) {
-          font-size: 28px;
-          margin-bottom: 20px;
-        }
+        &-swipe{
+          width: 50%;
+          opacity: 0.5;
+          transition: opacity 1s ease-in-out;
 
-        @media (max-width: 925px) {
-          font-size: 24px;
-          margin-bottom: 10px;
+          &:hover{
+            opacity: 1;
+          }
+
+          &-text {
+            font-size: 10px;
+
+            @media (max-width: 375px) {
+              font-size: 8px;
+            }
+          }
+
+          &-arrow {
+            margin-left: 5px;
+            animation-name: arrow;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+          }
+
+          @media (min-width: 701px) {
+            display: none;
+          }
+
+          @media (max-width: 700px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          @keyframes arrow {
+            0%{
+              opacity: 0.1;
+            }
+            100%{
+              opacity: 1;
+            }
+          }
         }
       }
 
