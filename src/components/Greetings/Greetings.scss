@@ -8,6 +8,10 @@
     padding: 23% 0 0 0;
   }
 
+  @media (max-width: 1600px) and (max-height: 900px) {
+    padding: 20% 0 0 0;
+  }
+
   @media (max-width: 1024px) and (max-height: 600px) {
     padding: 20% 0 0 0;
   }

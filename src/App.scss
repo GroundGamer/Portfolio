@@ -12,19 +12,7 @@ html, body {
 }
 
 body {
-  overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, #D60000 0%, #E34400 25%, #EE6800 50%, #F78800 75%, #FFA600 100%);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #D60000 0%, #E34400 25%, #EE6800 50%, #F78800 75%, #FFA600 100%);
-  }
+  overflow: hidden;
 }
 
 #root {
