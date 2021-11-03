@@ -19,7 +19,7 @@ export const WheelSlice = createSlice({
 			state.indexAnchor -= 1
 		},
 		incrementByAmount: (state, action: PayloadAction<number>) => {
-			state.indexAnchor += action.payload
+			state.indexAnchor = action.payload
 		},
 	},
 })

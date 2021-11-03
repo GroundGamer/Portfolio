@@ -10,6 +10,11 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 const Greetings: FC = () => {
 	const dispatch = useAppDispatch()
 	
+	const handleAnchor = () => {
+		dispatch(incrementByAmount(0))
+		dispatch(incrementByAmount(2))
+	}
+	
 	return (
 		<ScrollableAnchor id={'greetings'}>
 			<div className="greetings">
@@ -36,7 +41,7 @@ const Greetings: FC = () => {
 							</p>
 							<br/>
 							<p className="greetings__content-area-text">
-								Вы можете посмотреть <i onClick={() => dispatch(incrementByAmount(2))} className="greetings__content-area-text-italic">
+								Вы можете посмотреть <i onClick={() => handleAnchor()} className="greetings__content-area-text-italic">
 									мои работы
 								</i> сразу, или продолжайте прокручивать :)
 							</p>

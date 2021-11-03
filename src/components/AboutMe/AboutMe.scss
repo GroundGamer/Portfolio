@@ -241,6 +241,10 @@
               @media (max-width: 1024px) {
                 font-size: 14px;
               }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                font-size: 12px;
+              }
             }
 
             &-story {
@@ -260,6 +264,10 @@
 
               @media (max-width: 1024px) {
                 font-size: 14px;
+              }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                font-size: 12px;
               }
 
               &-italic {
@@ -315,6 +323,7 @@
                 font-size: 13px;
               }
 
+
               &:active {
                 color: #D60000;
               }
@@ -333,6 +342,10 @@
               @media (max-width: 1024px) {
                 margin-bottom: 15px;
               }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                margin-bottom: 0;
+              }
             }
 
             &-hh {
@@ -347,6 +360,10 @@
 
               @media (max-width: 1024px) {
                 margin-bottom: 15px;
+              }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                margin-bottom: 0;
               }
             }
 
@@ -363,6 +380,10 @@
               @media (max-width: 1024px) {
                 margin-bottom: 15px;
               }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                margin-bottom: 0;
+              }
             }
 
             &-vk {
@@ -377,6 +398,10 @@
 
               @media (max-width: 1024px) {
                 margin-bottom: 15px;
+              }
+
+              @media (max-width: 1024px) and (max-height: 600px) {
+                margin-bottom: 0;
               }
             }
 
