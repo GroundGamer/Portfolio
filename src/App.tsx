@@ -1,12 +1,67 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import './App.scss';
 import Greetings from "./components/Greetings/Greetings";
 import AboutMe from "./components/AboutMe/AboutMe";
 import MyWorks from "./components/MyWorks/MyWorks";
 
+//@ts-ignore
+import {goToAnchor, configureAnchors} from 'react-scrollable-anchor';
+import {useAppDispatch, useAppSelector} from "./hooks/redux";
+import {decrement, increment} from "./store/reducers/WheelSlice";
+
 function App() {
+	enum Sections {
+		greetings,
+		aboutMe,
+		myWorks,
+	}
+	
+	const wheelTimeout: React.MutableRefObject<any> = useRef();
+	
+	const dispatch = useAppDispatch();
+	const {indexAnchor} = useAppSelector(state => state.WheelSlice);
+	
+	useEffect(() => {
+		configureAnchors({offset: -50, scrollDuration: 400})
+	}, []);
+	
+	useEffect(() => {
+		document.body.addEventListener(
+			"wheel",
+			(ev) => {
+				wheelTimeout.current && ev.preventDefault()
+			},
+			{passive: false});
+		goToAnchor(Sections[indexAnchor], false);
+		return () => document.body.removeEventListener(
+			"wheel",
+			(ev) => {
+				wheelTimeout.current && ev.preventDefault()
+			});
+	}, [Sections, indexAnchor]);
+	
+	const wheelEvent = (ev: React.WheelEvent) => {
+		clearTimeout(wheelTimeout.current);
+		
+		wheelTimeout.current = setTimeout(() => {
+			wheelTimeout.current = false;
+			
+			if (ev.deltaY === 100) {
+				if (indexAnchor !== 2) {
+					dispatch(increment())
+				}
+			}
+			
+			if (ev.deltaY === -100) {
+				if (indexAnchor !== 0) {
+					dispatch(decrement())
+				}
+			}
+		}, 400);
+	};
+	
 	return (
-		<>
+		<div ref={wheelTimeout} onWheel={(ev) => wheelEvent(ev)} className='wrapper'>
 			<Greetings/>
 			<AboutMe/>
 			<MyWorks/>
@@ -2043,7 +2098,7 @@ function App() {
 					</clipPath>
 				</defs>
 			</svg>
-		</>
+		</div>
 	);
 }
 
