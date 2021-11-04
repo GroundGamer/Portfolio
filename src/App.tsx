@@ -46,13 +46,13 @@ function App() {
 		wheelTimeout.current = setTimeout(() => {
 			wheelTimeout.current = false;
 			
-			if (ev.deltaY === 100) {
+			if (ev.deltaY >= 100 && ev.deltaY <= 225) {
 				if (indexAnchor !== 2) {
 					dispatch(increment())
 				}
 			}
 			
-			if (ev.deltaY === -100) {
+			if (ev.deltaY <= -100 && ev.deltaY >= -225) {
 				if (indexAnchor !== 0) {
 					dispatch(decrement())
 				}
