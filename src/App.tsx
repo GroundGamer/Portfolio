@@ -1,13 +1,14 @@
 import React, {useEffect, useRef} from 'react';
-import './App.scss';
 import Greetings from "./components/Greetings/Greetings";
 import AboutMe from "./components/AboutMe/AboutMe";
 import MyWorks from "./components/MyWorks/MyWorks";
+import {useAppDispatch, useAppSelector} from "./hooks/redux";
+import {decrement, increment} from "./store/reducers/WheelSlice";
+
+import './App.scss';
 
 //@ts-ignore
 import {goToAnchor, configureAnchors} from 'react-scrollable-anchor';
-import {useAppDispatch, useAppSelector} from "./hooks/redux";
-import {decrement, increment} from "./store/reducers/WheelSlice";
 
 function App() {
 	enum Sections {
