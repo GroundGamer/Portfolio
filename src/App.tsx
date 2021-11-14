@@ -17,6 +17,9 @@ function App() {
 		myWorks,
 	}
 	
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// Проблема с generic'ом в типе, пока заменил на any
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	const wheelTimeout: React.MutableRefObject<any> = useRef();
 	
 	const dispatch = useAppDispatch();
