@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface WheelState {
-	indexAnchor: number;
+	indexAnchor: number
 }
 
 const initialState: WheelState = {

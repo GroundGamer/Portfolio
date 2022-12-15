@@ -1,18 +1,20 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+
 import WorkSlice from './reducers/WorkSlice'
-import WheelSlice from "./reducers/WheelSlice";
+import WheelSlice from './reducers/WheelSlice'
+
 
 const rootReducer = combineReducers({
-	WorkSlice,
-	WheelSlice,
+    WorkSlice,
+    WheelSlice
 })
 
 export const setupStore = () => {
-	return configureStore({
-		reducer: rootReducer,
-		devTools: false,
-		middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-	})
+    return configureStore({
+        reducer: rootReducer,
+        devTools: false,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+    })
 }
 
 export type RootState = ReturnType<typeof rootReducer>
